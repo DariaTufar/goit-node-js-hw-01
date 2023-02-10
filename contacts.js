@@ -1,9 +1,11 @@
 const fs = require("fs");
 const path = require("path");
-//  ==================include module path to  resolve possible difficulties with directories of the files
+//  ==================include module path
+// ============to  resolve possible difficulties with directories of the files
 const contactsPath = path.resolve("db/contacts.json");
 
-//================== create a function to get whole list of a contacts from .json file, in a table form
+//================== create a function
+//============to get whole list of a contacts from.json file, in a table form
 function listContacts() {
   fs.readFile(contactsPath, "utf8", (error, data) => {
     if (error) {
@@ -14,7 +16,6 @@ function listContacts() {
   });
 }
 
-// listContacts();
 //===== function to find particular contact with  given id number
 
 function getContactById(contactId) {
@@ -28,11 +29,10 @@ function getContactById(contactId) {
     console.table(contactById);
   });
 }
-// getContactById( 2)
 
 //=======function to remove contacts
-// (create list of contacts except the one to be deleted,
-// and rewrite remaining contacts as a whole to a file)
+// ===(create list of contacts except the one to be deleted,
+// ===and rewrite remaining contacts as a whole to a file)
 
 function removeContact(contactId) {
   fs.readFile(contactsPath, "utf-8", (error, data) => {
@@ -43,7 +43,6 @@ function removeContact(contactId) {
     const contactsExceptId = JSON.parse(data).filter(
       (contact) => contact.id !== String(contactId)
     );
-    //   console.table(contactsExceptId);
 
     fs.writeFile(contactsPath, JSON.stringify(contactsExceptId), (error) => {
       if (error) {

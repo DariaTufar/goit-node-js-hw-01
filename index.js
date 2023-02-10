@@ -1,10 +1,7 @@
 const contacts = require("./contacts");
 
-// if you use yargs module to administer CLI -
-// const argv = require("yargs").argv;   //
-
-//or use commander module as follows 
 const { Command } = require("commander");
+
 const program = new Command();
 program
   .option("-a, --action <type>", "choose action")
@@ -17,24 +14,23 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-// followwing function is the same with commander and yargs modules
-
 function invokeAction({ action, id, name, email, phone }) {
-  switch (action) {
+    switch (action) {
+      
     case "list":
-          contacts.listContacts();
+      contacts.listContacts();
       break;
 
     case "get":
-          contacts.getContactById(id);
+      contacts.getContactById(id);
       break;
 
     case "add":
-          contacts.addContact(name, email, phone);
+      contacts.addContact(name, email, phone);
       break;
 
     case "remove":
-          contacts.removeContact(id);
+      contacts.removeContact(id);
       break;
 
     default:
