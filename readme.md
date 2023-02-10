@@ -1,31 +1,19 @@
-## GoIT Node.js Course Template Homework
+Welcome to simple command-line interface to store contacts, add or remove them, search by ID of the contact.
+ 
+Results of running  commands in the terminal:
+ 
+#1. Get and display the entire list of contacts in the form of a table (console.table). 
+node index.js --action list
+![Code_wmLX84a7a0](https://user-images.githubusercontent.com/65854631/218201135-da372723-a400-4342-a2a9-477addcb7825.png)
 
-Виконайте форк цього репозиторію для виконання домашніх завдань (2-6)
-Форк створить репозиторій на вашому http://github.com
+#2. Get contact by id
+node index.js --action get --id 5
+![Code_23O18U3Z3j](https://user-images.githubusercontent.com/65854631/218201335-a84b8b0c-4a83-4ef8-bba7-0576ecf12b51.png)
 
-Додайте ментора до колаборації
+#3. Add the contact
+node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-22
+![Code_MX78DqIG16](https://user-images.githubusercontent.com/65854631/218201548-ab4d7783-e253-4225-bf21-d6ea7194768b.png)
 
-Для кожної домашньої роботи створюйте свою гілку.
-
-- hw02
-- hw03
-- hw04
-- hw05
-- hw06
-
-Кожна нова гілка для др повинна робитися з master
-
-Після того, як ви закінчили виконувати домашнє завдання у своїй гілці, необхідно зробити пулл-реквест (PR). Потім додати ментора для рев'ю коду. Тільки після того, як ментор заапрувить PR, ви можете виконати мердж гілки з домашнім завданням у майстер.
-
-Уважно читайте коментарі ментора. Виправте зауваження та зробіть коміт у гілці з домашнім завданням. Зміни підтягнуться у PR автоматично після того, як ви відправите коміт з виправленнями на github
-Після виправлення знову додайте ментора на рев'ю коду.
-
-- При здачі домашньої роботи є посилання на PR
-- JS-код чистий та зрозумілий, для форматування використовується Prettier
-
-### Команди:
-
-- `npm start` &mdash; старт сервера в режимі production
-- `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
-- `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
-- `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
+#4 Delete the contact
+node index.js --action remove --id=3
+![Code_66nSD4E5Ru](https://user-images.githubusercontent.com/65854631/218201707-f81ba47a-1f76-44eb-9326-4f56cd9996c0.png)
